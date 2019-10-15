@@ -31,6 +31,11 @@ const HomeScreen = ({navigation}) => {
     }}
       title="Go to Text demo" />  
 
+    <Button onPress={() => {
+      navigation.navigate('Box');
+    }}
+      title="Go to Box demo" />  
+
 
       <TouchableOpacity onPress={(event)=>{
         console.log(event);

@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 
 const TextScreen = () => {
     const [name,func] = useState('');
+    const [password, passF] = useState('');
     return (
         <View>
             <Text>Enter your name</Text>
@@ -16,6 +17,17 @@ const TextScreen = () => {
                 }}
                 />
             <Text>My name is {name}</Text>
+            <Text>Enter password</Text>
+            <TextInput 
+                style={styles.input}
+                autoCapitalize="none"
+                autoCorrect={false}
+                value={password}
+                onChangeText={
+                    (part)=>{passF(part)}
+                }
+            />
+            {password.length < 5 ? <Text>Password length should be longer than 5</Text> : null}
         </View>
     );
 };
